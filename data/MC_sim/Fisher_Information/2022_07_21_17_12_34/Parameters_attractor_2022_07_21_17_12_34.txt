@@ -1,0 +1,17 @@
+T .05
+A_two_point_b 1.
+w_two_point 0.1
+A_one_point_b 0.01
+w_one_point 0.07
+g_b 0.
+xi 0.2 
+f 0.15
+connect_shape 1
+conserved 1
+N_pf 100
+N_thermal 300000
+N_measure 3000000
+N_MC_runs 30
+N_J 100
+N_r 1
+datapath data/Fisher_information_network/Attractor/
