@@ -93,7 +93,6 @@ int main(int argc, char** argv){
 	double parameter_value;
 	
 	// Variables set at run time:
-	int comp_BF; //If comp_BF == 1, calculations are also done by performing the spin sums exactly, in addition to the Monte-Carlo calculations (quite expensive for N_pf >= 20-25) 
 	int Ising_like;
 	Ising_like = 0;
 	
@@ -190,18 +189,16 @@ int main(int argc, char** argv){
 	cout << endl;
 	cout << "N_pf=" << N_pf << " N_thermal=" << N_thermal << " N_measure=" << N_measure << " N_MC_runs=" << N_MC_runs << " N_J=" << N_J << " N_r=" << N_r << " datapath=" << datapath <<endl; 
 	
-	comp_BF = 0;
-  	
   	
   	//Now really start doing something:
   	for(int ii=0; ii<f_list.size(); ii++){  	
 		if(Ising_like == 1){
 			sim_and_write_av_Fisher_information(A_one_point_I, w_one_point, A_two_point_I, w_two_point, f_list[ii], g_I, xi, T, 
-			connect_shape, N_pf, N_thermal, N_measure, N_MC_runs, comp_BF, Ising_like, conserved, datapath + time_suffix + '/', time_suffix, seed_number);
+			connect_shape, N_pf, N_thermal, N_measure, N_MC_runs, Ising_like, conserved, datapath + time_suffix + '/', time_suffix, seed_number);
 		}
 		else if(Ising_like == 0){
 			sim_and_write_av_Fisher_information(A_one_point_b, w_one_point, A_two_point_b, w_two_point, f_list[ii], g_b, xi, T, 
-			connect_shape, N_pf, N_thermal, N_measure, N_MC_runs, comp_BF, Ising_like, conserved, datapath + time_suffix + '/', time_suffix, seed_number);
+			connect_shape, N_pf, N_thermal, N_measure, N_MC_runs, Ising_like, conserved, datapath + time_suffix + '/', time_suffix, seed_number);
 		}
   	}
 	return 0;
