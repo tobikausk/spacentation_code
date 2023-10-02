@@ -1,9 +1,9 @@
 # spacentation_code
-Code accompanying the publication of Kühn and Monasson 2023
+Code accompanying the publication of Kühn and Monasson 2023.
 
-The python and c++ scripts provided in this repository allow to generate the data shown in the figures of the present publication. Please use the conda environment provided by spacentation.yml to run the python scripts. For the cpp programs, only standard libraries are used, notably eigen.
+The python and c++ scripts provided in this repository enables to generate the data shown in the figures of the present publication. Please use the conda environment provided by spacentation.yml to run the python scripts. For the cpp programs, only standard libraries are used, notably eigen. To run the cpp-files, linux bash-scripts are provided. For different operating systems, this solution would have to be adapted.
 
-The corresponding scripts, ordered by figures are the following:
+The corresponding scripts, ordered by figures are as follows:
 
 **Figure 2**
 
