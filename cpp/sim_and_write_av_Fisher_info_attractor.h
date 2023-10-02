@@ -5,7 +5,6 @@
 
 #include "Vector_Definitions.h"
 #include "population_neuronal_functions_attractor.h"
-//#include "Vector_Definitions.h"
 #include <fstream>
 #include <sstream>
 
