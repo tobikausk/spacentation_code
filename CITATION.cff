@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: spacentation_code
+message: Code to generate the data for Kühn and Monasson 2023
+type: software
+authors:
+  - given-names: Tobias
+    family-names: Kühn
+    email: tobias.kuhn@inserm.fr
+    affiliation: >-
+      Institut de la Vision, Sorbonne Université, CNRS,
+      INSERM
+    orcid: 'https://orcid.org/0000-0003-0741-1083'
+identifiers:
+  - type: url
+    value: 'https://arxiv.org/abs/2304.13334'
+    description: Preprint of Kühn and Monasson 2023
+repository-code: 'https://github.com/tobikausk/spacentation_code'
+keywords:
+  - Monte Carlo
+  - Mean field
+  - Spin glass
