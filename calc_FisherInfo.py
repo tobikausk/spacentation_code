@@ -35,13 +35,6 @@ def FisherInfo_from_corr_compare_noise_corr(corr_mat, var_mat, x_list, xi, A_one
             EW_inv[ii] = 0.
 
     corr_mat_pseudo_inv = np.dot(EV, np.dot(np.diag(EW_inv), EV.T))
-    # corr_mat_inv = np.linalg.inv(corr_mat)
     var_mat_inv = np.linalg.inv(var_mat)
 
-    # corr_mat_complicated = np.dot(corr_mat, np.dot(corr_mat_inv, corr_mat))
-    # corr_mat_complicated = np.dot(corr_mat, np.identity(len(U_prime)))
-
-    # return np.dot(U_prime/T, np.dot(corr_mat, U_prime/T)), np.dot(f_prime, np.dot(var_mat_inv, f_prime))
-    # return np.dot(U_prime/T, np.dot(corr_mat_complicated, U_prime/T)), np.dot(f_prime, np.dot(var_mat_inv, f_prime))
-    # return np.dot(U_prime/T, np.dot(corr_mat, np.dot(corr_mat_inv, np.dot(corr_mat, U_prime/T)))), np.dot(f_prime, np.dot(var_mat_inv, f_prime))
     return np.dot(f_prime, np.dot(corr_mat_pseudo_inv, f_prime)), np.dot(f_prime, np.dot(var_mat_inv, f_prime)) 

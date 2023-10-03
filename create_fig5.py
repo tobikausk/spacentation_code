@@ -13,14 +13,10 @@ datapath = 'data/MC_sim/Linear_readout/'
 datapath_theo = 'data/Theory/'
 figurepath = 'figures/Linear_readout/'
 
-# time_stamp = '2023_02_23_14_41_05'
+time_stamp = '2023_02_23_14_41_05'
 
-# time_stamp_list = ['2023_03_06_23_13_54', '2023_03_06_23_14_19', '2023_03_06_23_15_29', 
-#                    '2023_03_07_19_51_13', '2023_03_07_19_59_19', '2023_03_07_16_38_47']
-
-time_stamp = '2023_09_25_22_28_02'
-
-time_stamp_list = ['2023_09_25_22_28_02', '2023_09_29_17_09_59']
+time_stamp_list = ['2023_03_06_23_13_54', '2023_03_06_23_14_19', '2023_03_06_23_15_29', 
+                   '2023_03_07_19_51_13', '2023_03_07_19_59_19', '2023_03_07_16_38_47']
 
 
 time_stamp_list_lumped = '' # Puts all elements of time_stamp_list into one long string

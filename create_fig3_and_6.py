@@ -52,8 +52,8 @@ os.makedirs(figurepath_specific, exist_ok=True)
 shutil.copy('data/MC_sim/Fisher_Information/' + time_suffix_list[0] + '/Parameters_attractor_' + time_suffix_list[0] + '.txt', 
                 figurepath_specific)
 
-# calc_theory_newly = True
-calc_theory_newly = False
+calc_theory_newly = True
+# calc_theory_newly = False
 
 def round_to_read(x):
     if(np.round(x) == x):

@@ -14,11 +14,9 @@ import visualization_prx as vis
 from matplotlib import pyplot as plt
 
 
-# N_theo_points = 80 #200
 N_theo_points = 80 #200
 xi = 0.2
 mean_act = 0.15 # 0.2 
-# A_one_point = 0.01 # 0.45 
 A_one_point = 0.2  
 w_one_point = 0.07 
 w_two_point = 0.1 
@@ -27,16 +25,12 @@ T = 1.
 g_disorder = 0
 
 N_x = 100
-# N_sample_Gauss = 1000
-# N_sample_Gauss = 30000
 N_sample_Gauss = 100000
 
 tol_phi = 0.001
 tol_phi_abs = 0.001
 tol_q = 0.0001
 tol_q_abs = 0.0001
-# eps_relax_phi = 0.3
-# eps_relax_rho = 0.3
 eps_relax_phi = 0.1
 eps_relax_rho = 0.1
 
@@ -44,12 +38,11 @@ figurepath = 'figures/Only_local_recurrency/'
 
 space_form = 'rectangle'
 
-#A_two_point_max = 2.
 A_two_point_max = 40. # Temperature set to 1.0 (instead of 0.05)
 r_scale_max = 1.
 
-# calc_newly = True
-calc_newly = False
+calc_newly = True
+# calc_newly = False
 
 savefig = True
 
@@ -149,9 +142,6 @@ if(savefig == True):
     plt.savefig(figurepath + figurename + '.pdf', bbox_inches="tight")
     plt.savefig(figurepath + figurename + '.eps', bbox_inches="tight")
     plt.savefig(figurepath + figurename + '.jpg', bbox_inches="tight")
-
-# axA = panel_factory.new_panel(
-#     0, 0, 'a', label_position='leftleft', voffset=0., panel_height_factor=0.9)
 
 #create instance of visualization, this sets all the matplotlib rcParams
 visualization = vis.visualization()  

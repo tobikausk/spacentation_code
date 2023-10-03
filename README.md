@@ -50,14 +50,14 @@ Dependencies: load_parameters.py, load_and_plot_activities.py, attractor_with_in
 
 **Figure 4a**
 
-Run "create_fig4a.py". 
+Run "create_fig4a.py" (takes several hours on a standard laptop if calc_theory_newly == True). 
 
 Dependencies: calc_CrossCorr_fixedMean_disorder.py and calc_FisherInfo.py
 
 
 **Figure 4b**
 
-Run Recurrent_feedforward_const_FisherInfo.py with three different parameters: FisherInfo_wish = 0.01, 0.015 and 0.02. 
+Run Recurrent_feedforward_const_FisherInfo.py with three different parameters: FisherInfo_wish = 0.01, 0.015 and 0.02., adapting A_one_point_list, A_two_point_minus_list and A_two_point_plus_list as indicated by the commented lines (takes several hours each time on a standard laptop). Once the data is generated, this does not have to be done again, of course.
 
 Dependency: compute_FisherInfo.py
 

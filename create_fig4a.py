@@ -23,16 +23,12 @@ w_two_point = 0.1
 T = 0.05 # 0.2 
 
 N_x = 100
-# N_sample_Gauss = 1000
-# N_sample_Gauss = 30000
 N_sample_Gauss = 100000
 
 tol_phi = 0.001
 tol_phi_abs = 0.001
 tol_q = 0.0001
 tol_q_abs = 0.0001
-# eps_relax_phi = 0.3
-# eps_relax_rho = 0.3
 eps_relax_phi = 0.1
 eps_relax_rho = 0.1
 

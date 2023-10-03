@@ -6,9 +6,6 @@ from matplotlib import pyplot as plt
 from labellines import labelLines
 
 
-# datapath = '/home/chenani/dataWork/ali/MEGdata/isoFisherInfo/' # Okay, where does this come from?
-# figurepath = '/home/chenani/ownCloud/IpythonNotebooks/Sleep/MEC_Lesion_Project/figures/isoFisherInfo/' # And this?
-
 figurepath = 'figures/isoFisherInformation/'
 
 # Parameters:

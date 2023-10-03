@@ -18,7 +18,7 @@ N_x = 100
 
 N_sample_Gauss = 10000
 
-FisherInfo_wish = 0.015
+FisherInfo_wish = 0.01
 
 tol_phi = 0.001
 tol_phi_abs = 0.0001
@@ -45,14 +45,14 @@ def find_Atwopoint(A_one_point, FisherInfo_goal, Atwopoint_minus, Atwopoint_plus
     return A_two_point
 
 # A_one_point_list = np.array([0.019, 0.02, 0.022, 0.024, 0.026]) # For FisherInfo_wish = 0.02
-# A_one_point_list = np.array([0.012, 0.014, 0.016, 0.018]) # For FisherInfo_wish = 0.01
-A_one_point_list = np.array([0.016, 0.018, 0.02, 0.022]) # For FisherInfo_wish = 0.015
+A_one_point_list = np.array([0.012, 0.014, 0.016, 0.018]) # For FisherInfo_wish = 0.01
+# A_one_point_list = np.array([0.016, 0.018, 0.02, 0.022]) # For FisherInfo_wish = 0.015
 # A_two_point_minus_list = np.array([8., 5., 5., 1., -1.]) # For FisherInfo_wish = 0.02
-# A_two_point_minus_list = np.array([-1., -1., -1., -1.]) # For FisherInfo_wish = 0.01
-A_two_point_minus_list = np.array([9., 5., 1., -1.]) # For FisherInfo_wish = 0.015
+A_two_point_minus_list = np.array([-1., -1., -1., -1.]) # For FisherInfo_wish = 0.01
+# A_two_point_minus_list = np.array([9., 5., 1., -1.]) # For FisherInfo_wish = 0.015
 # A_two_point_plus_list = np.array([16., 14., 12., 10.,8.]) # For FisherInfo_wish = 0.02
-# A_two_point_plus_list = np.array([14., 12., 10.,8.]) # For FisherInfo_wish = 0.02
-A_two_point_plus_list = np.array([16., 12., 10.,8.]) # For FisherInfo_wish = 0.015
+A_two_point_plus_list = np.array([14., 12., 10.,8.]) # For FisherInfo_wish = 0.01
+# A_two_point_plus_list = np.array([16., 12., 10.,8.]) # For FisherInfo_wish = 0.015
 
 A_two_point_list = np.zeros_like(A_one_point_list)
 
@@ -64,7 +64,7 @@ for ii, A_one_point in enumerate(A_one_point_list):
 
 plt.figure(1)
 plt.plot(A_one_point_list, A_two_point_list)
-# %%
+
 datapath = 'data/Theory/FisherInfo_vs_Aone_Atwo/'
 
 with open( datapath + 'const_longer_FisherInfowish=' + str(FisherInfo_wish) + '_T=' + str(T) + '_f=' + str(mean_act) 

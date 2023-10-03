@@ -36,7 +36,6 @@ def stat_upto_fourth_order(A_one_point, w_one_point, J_list, g, T, xi,
     Gauss_list_collection = np.random.normal(0., 1., (N_sample, len(mu_det_list)))
             
     for ii in range(0, N_sample):
-        # Gauss_list = np.random.normal(0., 1., len(phi)) #Alternative: Stored list of random numbers and reused them here
         
         mu_total = mu_det_list + Gauss_list_collection[ii,:] * g * np.sqrt(2.*q)
         
@@ -51,12 +50,7 @@ def stat_upto_fourth_order(A_one_point, w_one_point, J_list, g, T, xi,
     c[2] = m[0] - 3. * m[1] + 2. * m[2]
     c[3] = m[0] - 7. * m[1] + 12.* m[2] - 6. * m[3] 
     
-    # contr_dGdq2 = -m[1] + 3.*m[2] - 2.*m[3]
-    
-    # for ii in range(0,N_x):
-    #     print('Erste Momente:', rho[ii], ' ', c[0,ii], ' ', m[0,ii])
-    
-    return c, m#, contr_dGdq2
+    return c, m 
 
 
 def projector(A_one_point, w_one_point, J_list, g, T,  xi, 
@@ -80,15 +74,12 @@ def projector(A_one_point, w_one_point, J_list, g, T,  xi,
         small_block = np.zeros((2,2), dtype=float)
         print('small_block.shape=', small_block.shape)
         small_block[0,0] = N_x * (g**2/T**2) + (g**4/T**4) * np.sum(c4)
-        # small_block[0,0] = N_x * (g**2/T**2) + (g**4/T**4) * np.sum(c4 - 2.*c3 + c2) #Irrtum!!!! War doch richtig, wie es vorher war.
         small_block[0,1] = ell * (g**2/T**2) * np.sum(c3)
-        # small_block[0,1] = ell * (g**2/T**2) * np.sum(c3 - c2) #Irrtum!!!! War doch richtig, wie es vorher war.
         small_block[1,0] = small_block[0,1]
         small_block[1,1] = ell**2 * np.sum(c2)
     
         dim_change_mat = np.zeros((N_x,2), dtype=float)
         dim_change_mat[:,0] = (g**2/T**2) * c3
-        # dim_change_mat[:,0] = (g**2/T**2) * (c3 - c2) #Irrtum!!!! War doch richtig, wie es vorher war.
         dim_change_mat[:,1] = ell * c2
         
         large_block_sandwiched = np.dot(dim_change_mat.transpose(),np.dot(K_eff/T, dim_change_mat))
