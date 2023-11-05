@@ -189,7 +189,36 @@ plt.ylabel(r'Activity $\rho(x)$')
 plt.legend()
 
 
-figurename = 'Tuning_curve_var_A_two_point_max=' + str(A_two_point_max) + 'A_one_point=' + str(A_one_point) + '_N_sample_Gauss=' + str(N_sample_Gauss)
+figurename = 'Tuning_curve_var_A_two_point_max=' + str(A_two_point_max) + '_A_one_point=' + str(A_one_point) + '_N_sample_Gauss=' + str(N_sample_Gauss)
+
+if(savefig == True):
+    plt.savefig(figurepath + figurename + '.pdf', bbox_inches="tight")
+    plt.savefig(figurepath + figurename + '.eps', bbox_inches="tight")
+    plt.savefig(figurepath + figurename + '.jpg', bbox_inches="tight")
+
+
+#create instance of visualization, this sets all the matplotlib rcParams
+visualization = vis.visualization()  
+
+# set standard figsize to one column according  to prx guidelines
+visualization.set_SCI_1column_fig_style(ratio=vis.panel_wh_ratio)  # here, also another width/height ratio can be entered, eg: 3.
+
+# create fig, here only one panel. Use constrained_layout to get a figure with nice boundaries fitting to the plots
+fig, ax = plt.subplots(nrows=1, ncols=1, constrained_layout=True)
+
+color_list = ['black', 'blue', 'cyan', 'gray', 'green']
+
+for kk, ii in enumerate([0, int(0.6*N_theo_points),int(0.7*N_theo_points), int(0.8*N_theo_points), int(0.9*N_theo_points)]):
+    plt.plot(xs_theo, rho_collection[ii, :], 
+             label=r'$K_{\mathrm{rec}}=$' + str(np.round(A_two_point_list[ii]/T )), color = color_list[kk])
+
+plt.xlabel(r'place-field center $x$')
+plt.ylabel(r'Activity $\rho(x)$')
+
+plt.legend()
+
+
+figurename = 'Tuning_curve_for_talk_var_A_two_point_max=' + str(A_two_point_max) + '_A_one_point=' + str(A_one_point) + '_N_sample_Gauss=' + str(N_sample_Gauss)
 
 if(savefig == True):
     plt.savefig(figurepath + figurename + '.pdf', bbox_inches="tight")
